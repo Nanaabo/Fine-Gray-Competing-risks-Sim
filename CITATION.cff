@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this dataset or code, please cite it as below."
+type: dataset
+title: "Data for competing risks of loss to follow-up and mortality among adults receiving antiretroviral therapy"
+version: 1.0.0
+date-released: "2026-10-09"
+doi: "10.5281/zenodo.23269219"
+license: CC-BY-4.0  # change if the data are shared under restricted access
+repository-code: "https://github.com/Nanaabo/Fine-Gray-Competing-risks-Sim"
+authors:
+  - family-names: "Mohammed"
+    given-names: "A. Y."
+  - family-names: "Abo"
+    given-names: "Solomon Crusader"
+    affiliation: "University of Essex, Colchester, UK"
+    orcid: "https://orcid.org/0000-0002-7393-6809"
+  - family-names: "Bavug"
+    given-names: "B. T."
+abstract: "De-identified patient-level data (329 adults registered for antiretroviral therapy, 2013-2019, Baptist Medical Centre, Nalerigu, Northern Ghana), data dictionary and R code supporting a Fine-Gray competing-risks analysis of loss to follow-up and mortality."
+keywords:
+  - antiretroviral therapy
+  - HIV
+  - competing risks
+  - Fine-Gray model
+  - loss to follow-up
+  - Ghana
+preferred-citation:
+  type: article
+  title: "Assessing the Competing Risks of Loss to Follow-up and Mortality Among Adults Receiving Antiretroviral Therapy in Northern Ghana: Application of the Fine-Gray Subdistribution Hazard Model"
+  status: in-review
+  authors:
+    - family-names: "Mohammed"
+      given-names: "A. Y."
+    - family-names: "Abo"
+      given-names: "Solomon Crusader"
+    - family-names: "Bavug"
+      given-names: "B. T."
