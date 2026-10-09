@@ -1,21 +1,14 @@
-<!-- TODO before release: complete every [bracketed] item, then delete this comment. -->
-
 # Data and Code: Competing Risks of Loss to Follow-up and Mortality Among Adults Receiving Antiretroviral Therapy in Northern Ghana
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23269219.svg)](https://doi.org/10.5281/zenodo.23269219)
+https://zenodo.org/badge/DOI/10.5281/zenodo.23269219.svg)
 
 ## Overview
 
-This repository contains the dataset, data dictionary and analysis code that accompany the manuscript:
+> Mohammed AY, Abo SC, Bavug BT. *Assessing the Competing Risks of Loss to Follow-up and Mortality Among Adults Receiving Antiretroviral Therapy in Northern Ghana: Application of the Fine-Gray Subdistribution Hazard Model.
 
-> Abo SC, [co-authors]. *Assessing the Competing Risks of Loss to Follow-up and Mortality Among Adults Receiving Antiretroviral Therapy in Northern Ghana: Application of the Fine-Gray Subdistribution Hazard Model.* [Journal / preprint server]. [Year]. [Manuscript DOI or URL]
-
-The dataset contains records of **329 adults** who registered for antiretroviral therapy (ART) between **2013 and 2019** at [facility name], Northern Ghana. Each row is one patient. The data were used to estimate the cumulative incidence of, and covariate effects on, [loss to follow-up] in the presence of the competing event of [death], using the Fine-Gray subdistribution hazard model.
+The dataset contains records of **329 adults** who registered for antiretroviral therapy (ART) between **2013 and 2019** at the Antiretroviral Unit of the Baptist Medical Centre, Nalerigu, Northern Ghana. Each row is one patient. The data were used to estimate the cumulative incidence of, and covariate effects on, loss to follow-up in the presence of the competing event of death, using the Fine-Gray subdistribution hazard model.
 
 ## Repository contents
-
-```
-.
 ├── README.md                  This file
 ├── LICENSE                    Licence for the code
 ├── CITATION.cff               Citation metadata
@@ -24,7 +17,6 @@ The dataset contains records of **329 adults** who registered for antiretroviral
 │   └── data_dictionary.csv    Variable definitions and coding
 └── R/
     └── [analysis_script.R]    Code reproducing the tables and figures in the manuscript
-```
 
 ## Data description
 
@@ -54,7 +46,7 @@ The dataset contains records of **329 adults** who registered for antiretroviral
 | `Cotrimoxazole` | categorical | Cotrimoxazole prophylaxis | `Received`, `Not received` |
 | `HospitalAdmission` | categorical | [Hospital admission during follow-up / at baseline] | `Admitted`, `Not admitted` |
 | `Regimen` | categorical | First-line ART regimen | `EFV` (efavirenz-based), `NVP` (nevirapine-based) |
-| `fuptime` | integer | Follow-up time from [time origin] to [event or censoring], in [months] | 0–82 |
+| `fuptime` | integer | Follow-up time from ART initiation to event or censoring, in [months] | 0–82 |
 | `statuscprsk` | integer | Outcome status for the competing-risks analysis | `0`, `1`, `2` (see below) |
 
 The same information is provided in machine-readable form in `data/data_dictionary.csv`.
@@ -65,59 +57,32 @@ The same information is provided in machine-readable form in `data/data_dictiona
 
 | `statuscprsk` | Meaning | Patients |
 |---|---|---|
-| 0 | [Censored: e.g. retained in care at end of follow-up] | 124 |
+| 0 | [Censored: retained in care at end of follow-up] | 124 |
 | 1 | [Event type 1: loss to follow-up or death] | 153 |
 | 2 | [Event type 2: death or loss to follow-up] | 52 |
 
-[State how follow-up started and ended, how loss to follow-up was defined (e.g. no clinic contact for more than X days), how censoring was defined, and the date of data closure.]
+Patients entered follow-up on the date of ART initiation and were followed until the occurrence of an event or censoring.
 
 ## Data collection and ethics
 
-- **Source:** [e.g. routine clinic records / ART register at the facility]
 - **Design and period:** [Retrospective cohort; patients registered 2013–2019; follow-up until [date]]
-- **Ethics approval:** [Committee name, approval reference number, date]
-- **Consent:** [e.g. waiver of individual consent for use of anonymised routine records]
+- **Site permission:** The Baptist Medical Centre, Nalerigu (study site) gave written approval for the conduct of the study at the centre.
+- **Ethics approval:** The study protocol was approved by the Committee on Human Research, Publication and Ethics (CHRPE), School of Medicine and Dentistry, Kwame Nkrumah University of Science and Technology, Kumasi, Ghana (reference CHRPE/AP/1181/26, 14 September 2026).
+- **Consent:** [e.g. the requirement for individual consent was waived because anonymised routine records were used; confirm against the approved protocol]
 
 ## De-identification and privacy
 
-[Describe the steps taken, for example: direct identifiers (names, folder numbers, contact details, dates of birth, exact dates) were removed; `No` is a randomly assigned number; age was grouped / registration years were grouped / rare categories were merged.]
-
-Although direct identifiers have been removed, individual-level health data can carry a residual risk of re-identification when several characteristics are combined. **Users must not attempt to identify, contact or trace any individual represented in the data, or link these data with other datasets for that purpose.**
-
-## Reproducing the analysis
-
-**Software:** R [version X.Y.Z] with the packages [e.g. `survival`, `cmprsk`, `tidycmprsk`, `ggplot2`]. Package versions are recorded in [`renv.lock` / `sessionInfo.txt`].
-
-```r
-# Run from the repository root
-dat <- read.csv("data/ART.csv", stringsAsFactors = TRUE)
-source("R/[analysis_script.R]")
-```
-
-[Say which script produces which table or figure in the manuscript.]
-
-## Licence
-
-- **Data:** [Creative Commons Attribution 4.0 International (CC BY 4.0)]
-- **Code:** [MIT License]
-
-## How to cite
-
-Please cite the dataset and the manuscript.
+Although direct identifiers have been removed, individual-level health data can carry a residual risk of re-identification when several characteristics are combined. **Users must not attempt to identify, contact, or trace any individual represented in the data, or link these data with other datasets for that purpose.** Data should be used only for purposes consistent with the ethics approval above.
 
 **Dataset:**
-
-> Abo, S. C. (2026). *Data for competing risks of loss to follow-up and mortality among adults receiving antiretroviral therapy* (Version 1.0.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.23269219
-
-**Manuscript:** see [Overview](#overview).
+> Mohammed, A. Y., Abo, S. C., & Bavug, B. T. (2026). *Data for competing risks of loss to follow-up and mortality among adults receiving antiretroviral therapy* (Version 1.0.0). Zenodo. https://doi.org/10.5281/zenodo.23269219
 
 ## Contact
 
 Solomon Crusader Abo
 School of Mathematics, Statistics and Actuarial Science, University of Essex, Colchester, UK
 Email: sa24769@essex.ac.uk
-ORCID: [https://orcid.org/XXXX-XXXX-XXXX-XXXX]
+ORCID: https://orcid.org/0000-0002-7393-6809
 
 ## Changelog
-
-- **v1.0.0** (9 October 2026): Initial release accompanying the manuscript.
+- **v1.0.0** (9 October 2026): Initial release accompanying the manuscript, Assessing the Competing Risks of Loss to Follow-up and Mortality Among Adults Receiving Antiretroviral Therapy in Northern Ghana: Application of the Fine-Gray Subdistribution Hazard Model.
